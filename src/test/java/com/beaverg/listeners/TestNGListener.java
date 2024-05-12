@@ -5,9 +5,12 @@ import org.apache.logging.log4j.Logger;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import java.io.File;
+
 import static com.beaverg.utils.Printers.*;
 
 public class TestNGListener implements ITestListener {
+    private final File tempLogFile = new File("target/test_report.log");
     public static final Logger LOGGER = LogManager.getLogger(TestNGListener.class);
 
     // Colors:
@@ -25,7 +28,7 @@ public class TestNGListener implements ITestListener {
     }
 
     @Override
-    public void onTestSuccess(ITestResult result) {;
+    public void onTestSuccess(ITestResult result) {
         PRINTLN.info(String.format(ANSI_GREEN + "Test '%s' was completed successfully!", result.getName()));
         PRINTLN.info(ANSI_RESET);
     }

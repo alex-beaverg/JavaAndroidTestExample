@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
 <suite name="Android 'mobile.de' app testing" verbose="1" parallel="tests" thread-count="1">
-    <test name="Product cards testing" parallel="methods" thread-count="1">
+    <test name="Auto cards testing" parallel="methods" thread-count="1">
         <classes>
-            <class name="com.beaverg.tests.AndroidTest"/>
+            <class name="com.beaverg.tests.AutoCardTest"/>
         </classes>
     </test>
 </suite>
