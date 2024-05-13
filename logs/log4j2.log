@@ -21,3 +21,11 @@
 2024-05-13 12:51:13,011 ERROR c.b.l.TestNGListener [main] Test 'searchCardTest' was failed!
 2024-05-13 12:54:58,088 ERROR c.b.l.TestNGListener [main] Test 'onlineBuyingCardTest' was failed!
 2024-05-13 13:01:52,119 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'searchCardTest' was failed!
+2024-05-13 16:30:00,663 ERROR c.b.l.TestNGListener [main] Test 'carParkingCardTest' was failed!
+2024-05-13 16:31:27,611 ERROR c.b.l.TestNGListener [main] Test 'carParkingCardTest' was failed!
+2024-05-13 16:38:45,887 ERROR c.b.l.TestNGListener [main] Test 'carParkingCardTest' was failed!
+2024-05-13 16:43:14,652 ERROR c.b.l.TestNGListener [main] Test 'carParkingCardTest' was failed!
+2024-05-13 16:46:01,692 ERROR c.b.l.TestNGListener [main] Test 'carParkingCardTest' was failed!
+2024-05-13 16:52:59,827 ERROR c.b.l.TestNGListener [main] Test 'carParkingCardTest' was failed!
+2024-05-13 16:57:51,430 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'searchCardTest' was failed!
+2024-05-13 17:01:56,094 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'searchCardTest' was failed!

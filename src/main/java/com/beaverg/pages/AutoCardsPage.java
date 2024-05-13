@@ -1,6 +1,7 @@
 package com.beaverg.pages;
 
 import com.beaverg.base.BasePage;
+import com.beaverg.components.popup.BenefitsPopupComponent;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
@@ -13,13 +14,19 @@ public class AutoCardsPage extends BasePage {
     private WebElement addFilter;
 
     @FindBy(id = "headline")
-    List<WebElement> autoCardTitles;
+    private List<WebElement> autoCardTitles;
 
     @FindBy(id = "price1")
-    List<WebElement> autoCardPrices;
+    private List<WebElement> autoCardPrices;
 
     @FindBy(id = "details_line_1")
-    List<WebElement> autoCardDetails;
+    private List<WebElement> autoCardDetails;
+
+    @FindBy(id = "option_park_obs")
+    private List<WebElement> addToCarParkButtons;
+
+    @FindBy(xpath = "//android.widget.ImageButton[@content-desc='Navigate up']")
+    private WebElement goBackButton;
 
     public AutoCardsPage(AndroidDriver<MobileElement> driver) {
         super(driver);
@@ -82,5 +89,17 @@ public class AutoCardsPage extends BasePage {
         autoCardTitles.get(index).click();
         REPORT.info(String.format("[INFO:] Auto Card by index=%d was clicked", index));
         return new SearchAutoCardPage(driver);
+    }
+
+    public BenefitsPopupComponent clickAddToCarParkButtonByIndex(int index) {
+        addToCarParkButtons.get(index).click();
+        REPORT.info(String.format("[INFO:] 'Add to Car Park' button by index=%d was clicked", index));
+        return new BenefitsPopupComponent(driver);
+    }
+
+    public HomePage clickGoBackButtonToCarPark() {
+        goBackButton.click();
+        REPORT.info("[INFO:] 'Go back' button was clicked");
+        return new HomePage(driver);
     }
 }

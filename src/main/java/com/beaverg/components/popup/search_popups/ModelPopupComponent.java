@@ -28,7 +28,7 @@ public class ModelPopupComponent extends BaseComponent {
     }
 
     public void clickLancerItemCheckBox() {
-        swipeToText("Lancer");
+        swipeToText("Lancer", 0.15);
         lancerItemCheckbox.click();
         REPORT.info("[INFO:] Lancer item checkbox was clicked");
     }

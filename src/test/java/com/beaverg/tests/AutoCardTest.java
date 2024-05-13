@@ -2,6 +2,7 @@ package com.beaverg.tests;
 
 import com.beaverg.base.BaseTest;
 import com.beaverg.components.drop.MenuDropComponent;
+import com.beaverg.components.popup.BenefitsPopupComponent;
 import com.beaverg.components.popup.SaveSearchPopupComponent;
 import com.beaverg.components.popup.search_popups.ConditionPopupComponent;
 import com.beaverg.components.popup.search_popups.MakePopupComponent;
@@ -82,8 +83,47 @@ public class AutoCardTest extends BaseTest {
         SearchAutoCardPage autoCardPage = autoCardsPage.clickSearchAutoCardByIndex(cardNumber);
         sa.assertTrue(autoCardPage.isPageOpen(), "Auto Card page isn't open!");
 
-        AutoCard autoCard = AutoCardService.createSearchAutoCard(autoCardPage);
+        AutoCard autoCard = AutoCardService.createSearchAutoCard(autoCardPage, 0.35);
         sa.assertEquals(autoCardFromList, autoCard, "Objects aren't equal!");
+
+        sa.assertAll();
+    }
+
+    @Test
+    @Description("Verifying Car Parking auto card test")
+    public void carParkingCardTest() {
+        SoftAssert sa = new SoftAssert();
+        HomePage homePage = getHomePage();
+        MenuDropComponent menuDropComponent = homePage.clickOpenMenuButton();
+        sa.assertTrue(menuDropComponent.isComponentOpen(), "Menu drop component isn't open!");
+
+        SaveSearchPopupComponent saveSearchPopupComponent = menuDropComponent.clickOnlineBuyingItem();
+        sa.assertTrue(saveSearchPopupComponent.isComponentOpen(), "Save Search popup component isn't open!");
+
+        AutoCardsPage autoCardsPage = saveSearchPopupComponent.clickSaveSearchButton();
+        sa.assertTrue(autoCardsPage.isPageOpen(), "Auto Cards page isn't open!");
+
+        int cardNumber = Integer.parseInt(PropertyGetter.getData("card_number"));
+        AutoCard autoCardFromList = AutoCardService.createAutoCardByIndex(autoCardsPage, cardNumber);
+        BenefitsPopupComponent benefitsPopupComponent = autoCardsPage.clickAddToCarParkButtonByIndex(cardNumber);
+        benefitsPopupComponent.clickCancelButton();
+        homePage = autoCardsPage.clickGoBackButtonToCarPark();
+        sa.assertTrue(homePage.isPageOpen(), "Home page isn't open!");
+
+        menuDropComponent = homePage.clickOpenMenuButton();
+        sa.assertTrue(menuDropComponent.isComponentOpen(), "Menu drop component isn't open!");
+
+        CarParkPage carParkPage = menuDropComponent.clickCarParkItem();
+        sa.assertTrue(carParkPage.isPageOpen(), "Car Park page isn't open!");
+
+        AutoCard carParkAutoCard = AutoCardService.createAutoCardByIndex(carParkPage, 0);
+        sa.assertEquals(autoCardFromList, carParkAutoCard, "Objects aren't equal!");
+
+        SearchAutoCardPage autoCardPage = carParkPage.clickSearchAutoCardByIndex(0);
+        AutoCard autoCard = AutoCardService.createSearchAutoCard(autoCardPage, 0.35);
+        sa.assertEquals(carParkAutoCard, autoCard, "Objects aren't equal!");
+
+        autoCardPage.clickCarParkButton();
 
         sa.assertAll();
     }

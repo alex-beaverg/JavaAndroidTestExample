@@ -15,12 +15,12 @@ public class Base {
         PageFactory.initElements(this.driver, this);
     }
 
-    protected void swipeToText(String text){
+    protected void swipeToText(String text, double percentage){
         try {
             REPORT.info("[INFO]: Screen swiping");
             driver.findElementByAndroidUIAutomator(
-                    "new UiScrollable(new UiSelector().scrollable(true))" +
-                            ".setSwipeDeadZonePercentage(0.15).scrollIntoView(text(\"" + text + "\"))");
+                    String.format("new UiScrollable(new UiSelector().scrollable(true))" +
+                            ".setSwipeDeadZonePercentage(%s).scrollIntoView(text(\"%s\"))", percentage, text));
             REPORT.info("[INFO]: Page was swiped");
         } catch (Exception e) {
             REPORT.info("[INFO]: Got a swiping error!");

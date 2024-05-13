@@ -25,7 +25,7 @@ public class MakePopupComponent extends BaseComponent {
     }
 
     public ModelPopupComponent clickMitsubishiItem() {
-        swipeToText("Mitsubishi");
+        swipeToText("Mitsubishi", 0.15);
         mitsubishiItem.click();
         return new ModelPopupComponent(driver);
     }

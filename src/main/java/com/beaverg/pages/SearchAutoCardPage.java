@@ -28,6 +28,9 @@ public class SearchAutoCardPage extends BasePage {
     @FindBy(xpath = "//android.widget.TextView[@text='Power']//following-sibling::android.widget.TextView")
     private WebElement performance;
 
+    @FindBy(xpath = "//android.widget.Button[@content-desc='Park']")
+    private WebElement carParkButton;
+
     public SearchAutoCardPage(AndroidDriver<MobileElement> driver) {
         super(driver);
     }
@@ -50,8 +53,8 @@ public class SearchAutoCardPage extends BasePage {
                 .replace(",", "").strip());
     }
 
-    public String getFirstRegistration() {
-        swipeToText("First Registration");
+    public String getFirstRegistration(double percentage) {
+        swipeToText("kW", percentage);
         REPORT.info("[INFO:] Getting Auto Card first registration");
         return firstRegistration.getText();
     }
@@ -66,5 +69,10 @@ public class SearchAutoCardPage extends BasePage {
     public String getPerformance() {
         REPORT.info("[INFO:] Getting Auto Card performance");
         return performance.getText().replace("\u00a0", " ");
+    }
+
+    public void clickCarParkButton() {
+        carParkButton.click();
+        REPORT.info("[INFO:] 'Car Park' button was clicked");
     }
 }

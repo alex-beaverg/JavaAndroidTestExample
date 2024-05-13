@@ -2,6 +2,7 @@ package com.beaverg.components.drop;
 
 import com.beaverg.base.BaseComponent;
 import com.beaverg.components.popup.SaveSearchPopupComponent;
+import com.beaverg.pages.CarParkPage;
 import com.beaverg.pages.SearchPage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -17,6 +18,9 @@ public class MenuDropComponent extends BaseComponent {
 
     @FindBy(xpath = "//android.widget.CheckedTextView[@text='Search']")
     private WebElement searchItem;
+
+    @FindBy(xpath = "//android.widget.CheckedTextView[@text='Car Park']")
+    private WebElement carParkItem;
 
     public MenuDropComponent(AndroidDriver<MobileElement> driver) {
         super(driver);
@@ -38,5 +42,11 @@ public class MenuDropComponent extends BaseComponent {
         searchItem.click();
         REPORT.info("[INFO:] 'Search' menu item was clicked");
         return new SearchPage(driver);
+    }
+
+    public CarParkPage clickCarParkItem() {
+        carParkItem.click();
+        REPORT.info("[INFO:] 'Car Park' menu item was clicked");
+        return new CarParkPage(driver);
     }
 }

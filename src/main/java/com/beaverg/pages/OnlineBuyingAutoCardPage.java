@@ -48,7 +48,7 @@ public class OnlineBuyingAutoCardPage extends BasePage {
     }
 
     public String getFirstRegistration() {
-        swipeToText("First registration");
+        swipeToText("First registration", 0.15);
         REPORT.info("[INFO:] Getting AutoCard first registration");
         return firstRegistration.getText();
     }

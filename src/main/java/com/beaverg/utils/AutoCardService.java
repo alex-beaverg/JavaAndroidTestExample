@@ -27,11 +27,11 @@ public class AutoCardService {
         return card;
     }
 
-    public static AutoCard createSearchAutoCard(SearchAutoCardPage page) {
+    public static AutoCard createSearchAutoCard(SearchAutoCardPage page, double percentageForSwiping) {
         AutoCard card = new AutoCard();
         card.setTitle(page.getTitle());
         card.setPrice(page.getPrice());
-        card.setFirstRegistration(page.getFirstRegistration());
+        card.setFirstRegistration(page.getFirstRegistration(percentageForSwiping));
         card.setMileage(page.getMileage());
         card.setPerformance(page.getPerformance());
         return card;
