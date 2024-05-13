@@ -1,12 +1,13 @@
 package com.beaverg.utils;
 
 import com.beaverg.domain.AutoCard;
-import com.beaverg.pages.AutoCardPage;
-import com.beaverg.pages.OnlineBuyingPage;
+import com.beaverg.pages.OnlineBuyingAutoCardPage;
+import com.beaverg.pages.AutoCardsPage;
+import com.beaverg.pages.SearchAutoCardPage;
 
 public class AutoCardService {
 
-    public static AutoCard createOnlineBuyingAutoCardByIndex(OnlineBuyingPage page, int index) {
+    public static AutoCard createAutoCardByIndex(AutoCardsPage page, int index) {
         AutoCard card = new AutoCard();
         card.setTitle(page.getTitleByIndex(index));
         card.setPrice(page.getPriceByIndex(index));
@@ -16,7 +17,17 @@ public class AutoCardService {
         return card;
     }
 
-    public static AutoCard createAutoCard(AutoCardPage page) {
+    public static AutoCard createOnlineBuyingAutoCard(OnlineBuyingAutoCardPage page) {
+        AutoCard card = new AutoCard();
+        card.setTitle(page.getTitle());
+        card.setPrice(page.getPrice());
+        card.setFirstRegistration(page.getFirstRegistration());
+        card.setMileage(page.getMileage());
+        card.setPerformance(page.getPerformance());
+        return card;
+    }
+
+    public static AutoCard createSearchAutoCard(SearchAutoCardPage page) {
         AutoCard card = new AutoCard();
         card.setTitle(page.getTitle());
         card.setPrice(page.getPrice());

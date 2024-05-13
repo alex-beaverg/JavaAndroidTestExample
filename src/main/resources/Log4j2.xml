@@ -54,7 +54,7 @@
             <AppenderRef ref="rollingFile"/>
             <AppenderRef ref="InsteadOfSOUT_ln_For_Errors"/>
         </Logger>
-        <Logger name="com.beaverg.base.BaseElement" level="info" additivity="false">
+        <Logger name="com.beaverg.base.BaseComponent" level="info" additivity="false">
             <AppenderRef ref="tempFile"/>
             <AppenderRef ref="InsteadOfSOUT_ln"/>
         </Logger>

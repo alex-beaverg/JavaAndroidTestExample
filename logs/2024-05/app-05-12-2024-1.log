@@ -1,0 +1,28 @@
+2024-05-12 14:51:05,313 ERROR c.b.l.TestNGListener [main] Test 'exampleTest' was failed!
+2024-05-12 14:55:12,270 ERROR c.b.l.TestNGListener [main] Test 'exampleTest' was failed!
+2024-05-12 15:03:29,667 ERROR c.b.l.TestNGListener [main] Test 'exampleTest' was failed!
+2024-05-12 15:07:09,620 ERROR c.b.l.TestNGListener [main] Test 'exampleTest' was failed!
+2024-05-12 15:08:33,706 ERROR c.b.l.TestNGListener [main] Test 'exampleTest' was failed!
+2024-05-12 15:27:46,204 ERROR c.b.l.TestNGListener [main] Test 'exampleTest' was failed!
+2024-05-12 15:32:42,310 ERROR c.b.l.TestNGListener [main] Test 'exampleTest' was failed!
+2024-05-12 15:36:04,888 ERROR c.b.l.TestNGListener [TestNG-test=Product cards testing-1] Test 'exampleTest' was failed!
+2024-05-12 17:11:03,962 ERROR c.b.l.TestNGListener [TestNG-test=Product cards testing-1] Test 'exampleTest' was failed!
+2024-05-12 17:58:58,828 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!
+2024-05-12 18:19:06,922 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!
+2024-05-12 18:21:10,571 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!
+2024-05-12 18:30:28,101 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!
+2024-05-12 18:34:11,489 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!
+2024-05-12 18:35:15,026 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!
+2024-05-12 18:36:36,744 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!
+2024-05-12 18:38:58,144 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!
+2024-05-12 20:05:17,211 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!
+2024-05-12 20:14:59,394 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!
+2024-05-12 20:21:45,197 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!
+2024-05-12 20:29:57,394 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!
+2024-05-12 20:31:32,843 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!
+2024-05-12 20:34:25,360 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!
+2024-05-12 20:40:18,080 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!
+2024-05-12 20:46:17,754 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!
+2024-05-12 20:47:17,572 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!
+2024-05-12 20:50:43,880 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!
+2024-05-12 21:15:13,252 ERROR c.b.l.TestNGListener [TestNG-test=Auto cards testing-1] Test 'onlineBuyingCardTest' was failed!

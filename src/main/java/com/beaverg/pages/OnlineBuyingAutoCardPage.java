@@ -6,7 +6,7 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AutoCardPage extends BasePage {
+public class OnlineBuyingAutoCardPage extends BasePage {
     @FindBy(xpath = "//android.widget.TextView[@text='Continue to order']")
     private WebElement elementForChecking;
 
@@ -25,10 +25,11 @@ public class AutoCardPage extends BasePage {
     @FindBy(xpath = "//android.widget.TextView[@text='Performance']//following-sibling::android.widget.TextView[1]")
     private WebElement performance;
 
-    public AutoCardPage(AndroidDriver<MobileElement> driver) {
+    public OnlineBuyingAutoCardPage(AndroidDriver<MobileElement> driver) {
         super(driver);
     }
 
+    @Override
     public boolean isPageOpen() {
         REPORT.info("[INFO:] Checking opening AutoCard page");
         return elementForChecking.isDisplayed();
@@ -47,7 +48,7 @@ public class AutoCardPage extends BasePage {
     }
 
     public String getFirstRegistration() {
-        swipeToText("Performance");
+        swipeToText("First registration");
         REPORT.info("[INFO:] Getting AutoCard first registration");
         return firstRegistration.getText();
     }

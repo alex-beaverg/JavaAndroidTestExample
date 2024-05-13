@@ -1,13 +1,13 @@
 package com.beaverg.components.popup;
 
-import com.beaverg.base.BaseElement;
+import com.beaverg.base.BaseComponent;
 import com.beaverg.pages.HomePage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class PrivacyPopupComponent extends BaseElement {
+public class PrivacyPopupComponent extends BaseComponent {
 
     @FindBy(id = "consent_accept_button")
     private WebElement acceptPrivacyButton;
@@ -25,8 +25,9 @@ public class PrivacyPopupComponent extends BaseElement {
         return new HomePage(driver);
     }
 
+    @Override
     public boolean isComponentOpen() {
-        REPORT.info("[INFO:] Getting information about Privacy popup component");
+        REPORT.info("[INFO:] Checking opening Privacy popup component");
         return privacyText.getText().contains("Privacy");
     }
 }

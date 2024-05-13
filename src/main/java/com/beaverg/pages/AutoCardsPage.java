@@ -8,9 +8,9 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class OnlineBuyingPage extends BasePage {
-    @FindBy(xpath = "//android.widget.Button[@text='Online-Buying']")
-    private WebElement onlineBuyingFilter;
+public class AutoCardsPage extends BasePage {
+    @FindBy(id = "chip_filter")
+    private WebElement addFilter;
 
     @FindBy(id = "headline")
     List<WebElement> autoCardTitles;
@@ -21,22 +21,26 @@ public class OnlineBuyingPage extends BasePage {
     @FindBy(id = "details_line_1")
     List<WebElement> autoCardDetails;
 
-    public OnlineBuyingPage(AndroidDriver<MobileElement> driver) {
+    public AutoCardsPage(AndroidDriver<MobileElement> driver) {
         super(driver);
     }
 
+    @Override
     public boolean isPageOpen() {
-        REPORT.info("[INFO:] Checking opening Online Buying page");
-        return onlineBuyingFilter.isDisplayed();
+        REPORT.info("[INFO:] Checking opening Auto Cards page");
+        return addFilter.isDisplayed();
     }
 
     public String getTitleByIndex(int index) {
-        REPORT.info(String.format("[INFO:] Getting AutoCard title by index=%d", index));
-        return autoCardTitles.get(index).getText();
+        REPORT.info(String.format("[INFO:] Getting Auto Card title by index=%d", index));
+        return autoCardTitles.get(index).getText()
+                .replace("Sponsored", "")
+                .replace("New", "")
+                .replace("\u00a0", "").strip();
     }
 
     public int getPriceByIndex(int index) {
-        REPORT.info(String.format("[INFO:] Getting AutoCard price by index=%d", index));
+        REPORT.info(String.format("[INFO:] Getting Auto Card price by index=%d", index));
         return Integer.parseInt(autoCardPrices.get(index).getText()
                 .replace("€", "")
                 .replace(",", "")
@@ -44,7 +48,7 @@ public class OnlineBuyingPage extends BasePage {
     }
 
     public String getFirstRegistrationByIndex(int index) {
-        REPORT.info(String.format("[INFO:] Getting AutoCard first registration by index=%d", index));
+        REPORT.info(String.format("[INFO:] Getting Auto Card first registration by index=%d", index));
         return autoCardDetails.get(index).getText()
                 .replace("Accident-free\u00a0• ", "")
                 .split("\u00a0• ")[0]
@@ -52,7 +56,7 @@ public class OnlineBuyingPage extends BasePage {
     }
 
     public int getMileageByIndex(int index) {
-        REPORT.info(String.format("[INFO:] Getting AutoCard mileage by index=%d", index));
+        REPORT.info(String.format("[INFO:] Getting Auto Card mileage by index=%d", index));
         return Integer.parseInt(autoCardDetails.get(index).getText()
                 .replace("Accident-free\u00a0• ", "")
                 .split("\u00a0• ")[1]
@@ -61,16 +65,22 @@ public class OnlineBuyingPage extends BasePage {
     }
 
     public String getPerformanceByIndex(int index) {
-        REPORT.info(String.format("[INFO:] Getting AutoCard performance by index=%d", index));
+        REPORT.info(String.format("[INFO:] Getting Auto Card performance by index=%d", index));
         return autoCardDetails.get(index).getText()
                 .replace("Accident-free\u00a0• ", "")
                 .split("\u00a0• ")[2]
                 .replace("\u00a0", " ");
     }
 
-    public AutoCardPage clickAutoCardByIndex(int index) {
+    public OnlineBuyingAutoCardPage clickOnlineBuyingAutoCardByIndex(int index) {
         autoCardTitles.get(index).click();
-        REPORT.info(String.format("[INFO:] AutoCard by index=%d was clicked", index));
-        return new AutoCardPage(driver);
+        REPORT.info(String.format("[INFO:] Auto Card by index=%d was clicked", index));
+        return new OnlineBuyingAutoCardPage(driver);
+    }
+
+    public SearchAutoCardPage clickSearchAutoCardByIndex(int index) {
+        autoCardTitles.get(index).click();
+        REPORT.info(String.format("[INFO:] Auto Card by index=%d was clicked", index));
+        return new SearchAutoCardPage(driver);
     }
 }

@@ -24,6 +24,7 @@ public class HomePage extends BasePage {
         return new MenuDropComponent(driver);
     }
 
+    @Override
     public boolean isPageOpen() {
         REPORT.info("[INFO:] Checking opening Home page");
         return title.getText().contains("Home");
